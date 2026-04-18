@@ -18,6 +18,13 @@ namespace ToggleableTCATO
 		private const string tcatoFalsePlaceholder = "{TCATO:false}";
 		private readonly Regex regex = new Regex("({TCATO:false}|{TCATO:true})", RegexOptions.IgnoreCase);
 		private string sequence = "";
+		public override string UpdateUrl
+		{
+			get
+			{
+				return "https://raw.githubusercontent.com/CarrieForle/ToggleableTCATOKeePass/refs/heads/main/update.txt";
+			}
+		}
 
 		public override bool Initialize(IPluginHost host)
 		{
