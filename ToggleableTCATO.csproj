@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToggleableTCATO</RootNamespace>
+    <AssemblyName>ToggleableTCATO</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>5</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="KeePass" HintPath="$(KeePassDir)/KeePass.exe" />
+    <Reference Include="System.Windows.Forms" />
+    <!-- glob in Compile item will break plgx compilation -->
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToggleableTCATOExt.cs" />
+    <PackagePlgx Include="Properties/*.cs" PackDir="Properties" />
+    <PackagePlgx Include="*.cs;*.csproj" PackDir="" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CopyToPluginDir" Condition=" '$(KeePassDir)' != '' " AfterTargets="AfterBuild">
+    <Message Text="Copying to '$(KeePassDir)/Plugins'" Importance="high" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(KeePassDir)/Plugins" />
+  </Target>
+  <Target Name="PackagePlgx" Condition=" '$(KeePassDir)' != '' " AfterTargets="AfterBuild">
+    <Message Text="Packaging plgx" Importance="high" />
+    <RemoveDir Directories="$(TargetDir)/tmp" />
+    <MakeDir Directories="$(TargetDir)/tmp" />
+    <Copy SourceFiles="@(PackagePlgx)" DestinationFolder="$(TargetDir)/tmp/%(PackDir)" />
+    <Exec Command="$(KeePassDir)/KeePass.exe --plgx-create $(TargetDir)tmp" />
+    <Move SourceFiles="$(TargetDir)/tmp.plgx" DestinationFiles="$(TargetDir)/$(AssemblyName).plgx" />
+  </Target>
+</Project>

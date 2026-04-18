@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37111.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleableTCATO", "ToggleableTCATO.csproj", "{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B402E16D-0007-4B57-84F5-603C457559D7}
+	EndGlobalSection
+EndGlobal
