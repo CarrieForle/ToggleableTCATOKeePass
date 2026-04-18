@@ -51,8 +51,6 @@ namespace ToggleableTCATO
 		{
 			var subsequences = regex.Split(eventArgs.Sequence);
 
-			System.Diagnostics.Debug.WriteLine("OnFilterSendPre");
-
 			if (subsequences.Length <= 1)
 			{
 				return;
@@ -63,9 +61,6 @@ namespace ToggleableTCATO
 			bool isPlaceHolder = false;
 			bool isObfuscated = eventArgs.SendObfuscated;
 			Exception ex = null;
-
-			System.Diagnostics.Debug.WriteLine(string.Join("\n", subsequences));
-
 			foreach (var subsequence in subsequences)
 			{
 				if (subsequence != "")
