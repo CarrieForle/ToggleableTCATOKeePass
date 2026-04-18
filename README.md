@@ -1,6 +1,6 @@
 # ToggleableTCATO
 
-A Keepass plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of auto-typing, served as a [TCATO Placeholder](https://keepass.info/plugins.html#tcatoplh) drop-in replacement.
+A KeePass 2 plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of auto-typing, served as a [TCATO Placeholder](https://keepass.info/plugins.html#tcatoplh) drop-in replacement.
 
 # Why use this
 
@@ -16,7 +16,11 @@ Toggle TCATO by putting `{TCATO:true}` and `{TCATO:false}` in auto-type sequence
 
 # Build
 
-Create `Direcotry.Build.props` in the repo:
+This plugin is built with .NET framework 4.8.1.
+
+Download portable release of [KeePass 2](https://keepass.info/download.html).
+
+Create `Direcotry.Build.props` in the repo and put the portable KeePass directory in `<KeePassDir>`:
 
 ```xml
 <Project>
@@ -27,7 +31,7 @@ Create `Direcotry.Build.props` in the repo:
 ```
 
 ```sh
-dotnet build
+dotnet build -c Release
 ```
 
 To start debugging, build the DLL in Debug configuration. Copy it to KeePass plugin directory and attach `KeePass.exe`. Alternatively in Visual Studio, start the project with executable `KeePass.exe`.
