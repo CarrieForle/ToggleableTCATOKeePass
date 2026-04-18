@@ -55,7 +55,6 @@
     <MakeDir Directories="$(TargetDir)/tmp" />
     <Copy SourceFiles="@(PackagePlgx)" DestinationFolder="$(TargetDir)/tmp/%(PackDir)" />
     <Exec Command="$(KeePassDir)/KeePass.exe --plgx-create $(TargetDir)tmp" />
-    <RemoveDir Directories="$(TargetDir)/tmp" />
     <Move SourceFiles="$(TargetDir)/tmp.plgx" DestinationFiles="$(TargetDir)/$(AssemblyName).plgx" />
   </Target>
 </Project>
