@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ToggleableTCATO")]
-[assembly: AssemblyDescription("A Keepass plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of auto-typing.")]
+[assembly: AssemblyDescription("A KeePass 2 plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of auto-typing.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CarrieForle")]
 [assembly: AssemblyProduct("KeePass Plugin")]

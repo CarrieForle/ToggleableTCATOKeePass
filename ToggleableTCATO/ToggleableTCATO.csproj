@@ -49,12 +49,13 @@
     <Message Text="Copying to '$(KeePassDir)/Plugins'" Importance="high" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(KeePassDir)/Plugins" />
   </Target>
-  <Target Name="PackagePlgx" Condition=" '$(KeePassDir)' != '' " AfterTargets="AfterBuild">
+  <Target Name="PackagePlgx" Condition=" '$(KeePassDir)' != '' And $(Configuration) == 'Release' " AfterTargets="AfterBuild">
     <Message Text="Packaging plgx" Importance="high" />
     <RemoveDir Directories="$(TargetDir)/tmp" />
     <MakeDir Directories="$(TargetDir)/tmp" />
     <Copy SourceFiles="@(PackagePlgx)" DestinationFolder="$(TargetDir)/tmp/%(PackDir)" />
     <Exec Command="$(KeePassDir)/KeePass.exe --plgx-create $(TargetDir)tmp" />
+    <RemoveDir Directories="$(TargetDir)/tmp" />
     <Move SourceFiles="$(TargetDir)/tmp.plgx" DestinationFiles="$(TargetDir)/$(AssemblyName).plgx" />
   </Target>
 </Project>

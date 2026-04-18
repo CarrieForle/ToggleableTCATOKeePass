@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37111.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleableTCATO", "ToggleableTCATO.csproj", "{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleableTCATO", "ToggleableTCATO\ToggleableTCATO.csproj", "{A51F6A55-83E0-41FB-AF2A-EB50C79E9247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
