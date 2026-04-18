@@ -4,7 +4,7 @@ A KeePass 2 plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of 
 
 # Why use this
 
-If the original didn't work for some reason (it didn't work for me).
+If the original doesn't work for some reason (it doesn't work for me).
 
 # Usage
 
@@ -16,11 +16,11 @@ Toggle TCATO by putting `{TCATO:true}` and `{TCATO:false}` in auto-type sequence
 
 # Build
 
-This plugin is built with .NET framework 4.8.1.
+This plugin is built with .NET Framework 4.8.1.
 
 Download portable release of [KeePass 2](https://keepass.info/download.html).
 
-Create `Direcotry.Build.props` in the repo and put the portable KeePass directory in `<KeePassDir>`:
+Create `Directory.Build.props` in `ToggleableTCATO` and put the portable KeePass directory in `<KeePassDir>`:
 
 ```xml
 <Project>
