@@ -88,6 +88,8 @@ namespace ToggleableTCATO
 
 			eventArgs.Sequence = regex.Replace(sequence, "");
 			RaiseSendPost(eventArgs);
+
+			// Need this line, otherwise SendPost() and the exception handling below will run again after returning.
 			eventArgs.Sequence = "";
 
 			if (ex != null)
