@@ -6,6 +6,10 @@ A KeePass 2 plugin to toggle Two-Channel Auto-Type Obfuscation in the middle of 
 
 If the original doesn't work for some reason (it doesn't work for me).
 
+# Download
+
+Download the latest version [here](https://github.com/CarrieForle/ToggleableTCATOKeePass/releases).
+
 # Usage
 
 Toggle TCATO by putting `{TCATO:true}` and `{TCATO:false}` in auto-type sequences. For example, this will auto-type password without TCATO:
